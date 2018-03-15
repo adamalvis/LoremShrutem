@@ -3,6 +3,7 @@ import random
 
 from .settings import IMAGE_DIR
 
+
 def get_random_image() -> str:
   """Selects a random image from image directory"""
   ignore_files = ['.DS_Store', 'cropped']

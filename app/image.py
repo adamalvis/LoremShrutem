@@ -5,12 +5,14 @@ from uuid import uuid4
 from .settings import CROPPED_IMAGE_DIR
 from .utils import get_random_image
 
+
 class PlaceholderImage:
   def __init__(self):
     self.image_file = get_random_image()
     self.cropped_image = None
 
   def crop(self, width: int, height: int):
+    """Crops image and returns path to new image"""
     new_file = '{}.jpg'.format(uuid4())
     new_file_path = os.path.join(CROPPED_IMAGE_DIR, new_file)
 
