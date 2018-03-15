@@ -4,10 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <title>LoremShrutem</title>
 </head>
 <body>
-  <h1>Lorem Shrutem</h1>
-  <img src="http://localhost:5000/200/200" alt="">
+  
+  <div id="app">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Lorem Shrutem</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="formgroup">
+            <label for="width">Width</label>
+            <input type="text" class="form-control" id="width" v-model="width">
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="formgroup">
+            <label for="height">Height</label>
+            <input type="text" class="form-control" id="width" v-model="height">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <img :src="`http://localhost:5000/${width}/${height}`" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    var loremApp = new Vue({
+      el: '#app',
+      data: {
+        width: 200,
+        height: 200
+      }
+    })
+  </script>
 </body>
 </html>
